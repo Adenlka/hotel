@@ -1,0 +1,212 @@
+:root {
+    --spa-hero-zoom: 1.2;
+}
+
+.hero--spa .hero__layer {
+    width: 100%;
+    background-image: url("../images/onsen/onsen-01.jpg");
+    background-position: center;
+    opacity: 1;
+    transition: none;
+    transform: scale(var(--spa-hero-zoom));
+}
+
+.hero--spa.is-ready .hero__layer {
+    animation: spaZoomOut 12s ease-out forwards;
+}
+
+@keyframes spaZoomOut {
+    from {
+        transform: scale(var(--spa-hero-zoom));
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.hero--spa .hero__title-jp {
+    font-size: clamp(16px, 3vw, 36px);
+    letter-spacing: 0.2em;
+}
+
+.spa-section {
+    padding: 110px 24px;
+}
+
+.spa-section__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    gap: 18px;
+    justify-items: center;
+}
+
+.spa-section__title {
+    font-size: clamp(24px, 3.4vw, 38px);
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+
+.spa-section__rule {
+    width: min(220px, 60%);
+    height: 1px;
+    background: rgba(220, 182, 120, 0.35);
+}
+
+.spa-section__subtitle {
+    margin: 0;
+    font-size: 15px;
+    color: rgba(238, 242, 243, 0.85);
+}
+
+.spa-section__text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(238, 242, 243, 0.78);
+}
+
+.spa-zigzag {
+    padding: 120px 24px;
+}
+
+.spa-zigzag__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 72px;
+}
+
+.spa-unit {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+    align-items: center;
+}
+
+.spa-unit__media {
+    min-height: 360px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.spa-unit__media--outdoor {
+    background-image: url("../images/onsen/onsen-02.jpg");
+}
+
+.spa-unit__media--cypress {
+    background-image: url("../images/onsen/onsen-03.jpg");
+}
+
+.spa-unit__media--stone {
+    background-image: url("../images/onsen/onsen-04.jpg");
+}
+
+.spa-unit__media--private {
+    background-image: url("../images/onsen/onsen-05.jpg");
+}
+
+.spa-unit__media--sauna {
+    background-image: url("../images/onsen/onsen-06.jpg");
+}
+
+.spa-unit__content {
+    text-align: center;
+    display: grid;
+    gap: 12px;
+    justify-items: center;
+}
+
+.spa-unit__title {
+    margin: 0;
+    font-size: clamp(20px, 2.6vw, 30px);
+    letter-spacing: 0.08em;
+}
+
+.spa-unit__tag {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: rgba(220, 182, 120, 0.8);
+}
+
+.spa-unit__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(238, 242, 243, 0.78);
+}
+
+.spa-unit--flip .spa-unit__media {
+    order: 1;
+}
+
+.spa-unit--flip .spa-unit__content {
+    order: 2;
+}
+
+.spa-info {
+    padding: 120px 24px;
+}
+
+.spa-info__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    gap: 36px;
+}
+
+.spa-info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 18px;
+}
+
+.spa-info__panel {
+    border: 2px solid rgba(220, 182, 120, 0.15);
+    padding: 24px;
+    display: grid;
+    gap: 12px;
+}
+
+.spa-info__heading {
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+}
+
+.spa-info__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+    font-size: 14px;
+    color: rgba(238, 242, 243, 0.8);
+}
+
+.spa-info__list li::before {
+    content: "● ";
+    color: rgba(220, 182, 120, 0.8);
+}
+
+@media (max-width: 900px) {
+    .spa-zigzag__inner {
+        gap: 48px;
+    }
+
+    .spa-unit {
+        grid-template-columns: 1fr;
+    }
+
+    .spa-unit__media {
+        min-height: 280px;
+    }
+
+    .spa-unit--flip .spa-unit__media,
+    .spa-unit--flip .spa-unit__content {
+        order: 0;
+    }
+}
